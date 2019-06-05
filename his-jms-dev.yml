@@ -1,0 +1,26 @@
+host:
+  url: 117.73.2.87
+server:
+  port: 30018
+spring:
+  activemq:
+    in-memory: true
+    pool:
+      enabled: false
+    broker-url: tcp://${host.url}:61616
+    user: admin
+    password: a1234567@!
+    pooled: false
+  freemarker:
+    template-loader-path: classpath:/templates/
+  mvc:
+    static-path-pattern: classpath:/static/
+  application:
+    name: his-jms
+logging:
+  level: INFO
+  file: G:/logger.log
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${host.url}:30002/eureka/
